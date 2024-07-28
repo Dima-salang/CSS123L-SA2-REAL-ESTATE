@@ -104,6 +104,7 @@ public class MainFrame extends javax.swing.JFrame {
         lotBuyerInfo = new javax.swing.JLabel();
         lotReservedInfo = new javax.swing.JLabel();
         lotPurchaseDateInfo = new javax.swing.JLabel();
+        tableRefreshButton = new javax.swing.JButton();
         ReportPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ReportTable = new javax.swing.JTable();
@@ -153,9 +154,9 @@ public class MainFrame extends javax.swing.JFrame {
         ManagementTablePaneLayout.setVerticalGroup(
             ManagementTablePaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ManagementTablePaneLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(2, 2, 2)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(119, Short.MAX_VALUE))
         );
 
         ReserveButton.setText("Mark as Reserved");
@@ -178,13 +179,10 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel1.setText("Size (m^2)");
 
-        maxSizeField.setText("100");
-
         jLabel6.setText("Max");
 
         jLabel7.setText("Min");
 
-        minSizeField.setText("100");
         minSizeField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 minSizeFieldActionPerformed(evt);
@@ -198,7 +196,6 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        minPriceField.setText("100");
         minPriceField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 minPriceFieldActionPerformed(evt);
@@ -207,7 +204,6 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel8.setText("Min");
 
-        maxPriceField.setText("100");
         maxPriceField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 maxPriceFieldActionPerformed(evt);
@@ -480,6 +476,13 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap(139, Short.MAX_VALUE))
         );
 
+        tableRefreshButton.setText("Refresh");
+        tableRefreshButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tableRefreshButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -487,26 +490,32 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(MainManagementPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ManagementTablePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LotInfoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ManagementTablePane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LotInfoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(tableRefreshButton)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(MainManagementPane, javax.swing.GroupLayout.PREFERRED_SIZE, 520, Short.MAX_VALUE)
-                        .addGap(32, 32, 32))
-                    .addComponent(ManagementTablePane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(LotInfoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(tableRefreshButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ManagementTablePane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(MainManagementPane, javax.swing.GroupLayout.PREFERRED_SIZE, 584, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         tabbedPane.addTab("Management", jPanel4);
@@ -600,7 +609,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(ReportPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addContainerGap(153, Short.MAX_VALUE))
         );
 
         tabbedPane.addTab("Report", ReportPanel);
@@ -618,7 +627,7 @@ public class MainFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 608, Short.MAX_VALUE)
+            .addGap(0, 627, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -1105,7 +1114,7 @@ private void openStatusSpecificDialog(Lot lotObject) {
         }
         
     }
-        //GEN-LAST:event_SearchButtonActionPerformed
+//GEN-LAST:event_SearchButtonActionPerformed
 public String getSelectedButtonText(ButtonGroup buttonGroup) {
         for (Enumeration<AbstractButton> buttons = buttonGroup.getElements(); buttons.hasMoreElements();) {
             AbstractButton button = buttons.nextElement();
@@ -1120,6 +1129,23 @@ public String getSelectedButtonText(ButtonGroup buttonGroup) {
     private void blockNumFieldSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blockNumFieldSearchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_blockNumFieldSearchActionPerformed
+
+    private void tableRefreshButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableRefreshButtonActionPerformed
+        DefaultTableModel tableModel = (DefaultTableModel) LotTable.getModel();
+        tableModel.setRowCount(0);
+        for (Block block : blocks) {
+            for (Lot lot : block.getLots()) {
+                    Object[] rowData = {
+                        lot.getLotNumber(),
+                        lot.getBlockNum(),
+                        lot.getLotSize(),
+                        lot.getLotPrice(),
+                        lot.getLotStatus()
+                    };
+                tableModel.addRow(rowData);
+            }
+        }
+    }//GEN-LAST:event_tableRefreshButtonActionPerformed
 
     private void tabbedPaneStateChanged(javax.swing.event.ChangeEvent evt) {                                                                               
             JTabbedPane pane = (JTabbedPane) evt.getSource();
@@ -1257,6 +1283,7 @@ public String getSelectedButtonText(ButtonGroup buttonGroup) {
     private javax.swing.JLabel numTotalLots;
     private javax.swing.ButtonGroup statusSearchGroup;
     private javax.swing.JTabbedPane tabbedPane;
+    private javax.swing.JButton tableRefreshButton;
     // End of variables declaration//GEN-END:variables
 
 
