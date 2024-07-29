@@ -32,7 +32,7 @@ public class Block {
 
     public void assignLot(Lot lot) {
         lots.add(lot);
-
+        allLots.add(lot.getLotNumber());
     }
 
     public void deleteLot(Lot lot) {
