@@ -38,7 +38,6 @@ public class MainFrame extends javax.swing.JFrame {
 
         String[] blockList = {"Block 1", "Block 2", "Block 3", "Block 4", "Block 5"};
         StatusFactory statusFactory = new StatusFactory();
-        LotFactory lotFactory = new LotFactory();
 
         
         
@@ -698,7 +697,7 @@ private void AddLotButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                     double parsedLotPrice = Double.parseDouble(lotPrice);
                     Status parsedLotStatus = statusFactory.createStatus(lotStatus);
 
-                    Lot lotObject = lotFactory.createLot(parsedLotPrice);
+                    Lot lotObject = new Lot();
                     lotObject.setLotNumber(lotNumber);
                     lotObject.setBlockNum(blockNum);
                     lotObject.setLotNumber(lotNumber);
@@ -1346,31 +1345,177 @@ public String getSelectedButtonText(ButtonGroup buttonGroup) {
                 updateDetailsOnSelection();
             }
     });
+
+    
+    // Block 1 lots
+            Lot lot1B1 = new Lot();
+            lot1B1.setBlockNum(block1);
+            lot1B1.setLotNumber("L1B1");
+            lot1B1.setLotPrice(2300.25);
+            lot1B1.setLotSize(575.92);
+            StatusForSale lot1B1Status = new StatusForSale();
+            try {
+                lot1B1Status.setStartSaleDate(new SimpleDateFormat("yyyy-MM-dd").parse("2023-10-12"));
+            } catch (ParseException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            lot1B1.setLotStatus(lot1B1Status);
+            block1.assignLot(lot1B1);
+
+            Lot lot2B1 = new Lot();
+            lot2B1.setBlockNum(block1);
+            lot2B1.setLotNumber("L2B1");
+            lot2B1.setLotPrice(2400.30);
+            lot2B1.setLotSize(580.45);
+            StatusReserved lot2B1Status = new StatusReserved();
+            lot2B1Status.setReserveeName("John Doe");
+            try {
+                lot2B1Status.setReserveDate(new SimpleDateFormat("yyyy-MM-dd").parse("2023-10-13"));
+            } catch (ParseException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            lot2B1.setLotStatus(lot2B1Status);
+            block1.assignLot(lot2B1);
+
+            Lot lot1B2 = new Lot();
+            lot1B2.setBlockNum(block2);
+            lot1B2.setLotNumber("L1B2");
+            lot1B2.setLotPrice(2500.75);
+            lot1B2.setLotSize(590.87);
+            StatusPurchased lot1B2Status = new StatusPurchased();
+            lot1B2Status.setPurchaserName("Jane Smith");
+            try {
+                lot1B2Status.setPurchaseDate(new SimpleDateFormat("yyyy-MM-dd").parse("2023-10-14"));
+            } catch (ParseException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            lot1B2.setLotStatus(lot1B2Status);
+            block2.assignLot(lot1B2);
+
+            Lot lot2B2 = new Lot();
+            lot2B2.setBlockNum(block2);
+            lot2B2.setLotNumber("L2B2");
+            lot2B2.setLotPrice(2600.50);
+            lot2B2.setLotSize(600.12);
+            StatusForSale lot2B2Status = new StatusForSale();
+            try {
+                lot2B2Status.setStartSaleDate(new SimpleDateFormat("yyyy-MM-dd").parse("2023-10-15"));
+            } catch (ParseException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            lot2B2.setLotStatus(lot2B2Status);
+            block2.assignLot(lot2B2);
+
+            Lot lot1B3 = new Lot();
+            lot1B3.setBlockNum(block3);
+            lot1B3.setLotNumber("L1B3");
+            lot1B3.setLotPrice(2700.10);
+            lot1B3.setLotSize(610.30);
+            StatusReserved lot1B3Status = new StatusReserved();
+            lot1B3Status.setReserveeName("Alice Johnson");
+            try {
+                lot1B3Status.setReserveDate(new SimpleDateFormat("yyyy-MM-dd").parse("2023-10-16"));
+            } catch (ParseException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            lot1B3.setLotStatus(lot1B3Status);
+            block3.assignLot(lot1B3);
+
+            Lot lot2B3 = new Lot();
+            lot2B3.setBlockNum(block3);
+            lot2B3.setLotNumber("L2B3");
+            lot2B3.setLotPrice(2800.35);
+            lot2B3.setLotSize(620.45);
+            StatusForSale lot2B3Status = new StatusForSale();
+            try {
+                lot2B3Status.setStartSaleDate(new SimpleDateFormat("yyyy-MM-dd").parse("2023-10-17"));
+            } catch (ParseException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            lot2B3.setLotStatus(lot2B3Status);
+            block2.assignLot(lot2B3);
+
+            Lot lot1B4 = new Lot();
+            lot1B4.setBlockNum(block4);
+            lot1B4.setLotNumber("L1B4");
+            lot1B4.setLotPrice(2900.50);
+            lot1B4.setLotSize(630.75);
+            StatusReserved lot1B4Status = new StatusReserved();
+            lot1B4Status.setReserveeName("Michael Brown");
+            try {
+                lot1B4Status.setReserveDate(new SimpleDateFormat("yyyy-MM-dd").parse("2023-10-18"));
+            } catch (ParseException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            lot1B4.setLotStatus(lot1B4Status);
+            block4.assignLot(lot1B4);
+
+            Lot lot2B4 = new Lot();
+            lot2B4.setBlockNum(block4);
+            lot2B4.setLotNumber("L2B4");
+            lot2B4.setLotPrice(3000.95);
+            lot2B4.setLotSize(640.80);
+            StatusPurchased lot2B4Status = new StatusPurchased();
+            lot2B4Status.setPurchaserName("Emily Davis");
+            try {
+                lot2B4Status.setPurchaseDate(new SimpleDateFormat("yyyy-MM-dd").parse("2023-10-19"));
+            } catch (ParseException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            lot2B4.setLotStatus(lot2B4Status);
+            block4.assignLot(lot2B4);
+
+            Lot lot1B5 = new Lot();
+            lot1B5.setBlockNum(block5);
+            lot1B5.setLotNumber("L1B5");
+            lot1B5.setLotPrice(3100.40);
+            lot1B5.setLotSize(650.50);
+            StatusForSale lot1B5Status = new StatusForSale();
+            try {
+                lot1B5Status.setStartSaleDate(new SimpleDateFormat("yyyy-MM-dd").parse("2023-10-20"));
+            } catch (ParseException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            lot1B5.setLotStatus(lot1B5Status);
+            block5.assignLot(lot1B5);
+
+            Lot lot2B5 = new Lot();
+            lot2B5.setBlockNum(block5);
+            lot2B5.setLotNumber("L2B5");
+            lot2B5.setLotPrice(3200.85);
+            lot2B5.setLotSize(660.35);
+            StatusReserved lot2B5Status = new StatusReserved();
+            lot2B5Status.setReserveeName("David Wilson");
+            try {
+                lot2B5Status.setReserveDate(new SimpleDateFormat("yyyy-MM-dd").parse("2023-10-21"));
+            } catch (ParseException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            lot2B5.setLotStatus(lot2B5Status);
+            block5.assignLot(lot2B5);
+
     DefaultTableModel tableModel = (DefaultTableModel) LotTable.getModel();
     for (int i = 0; i < blocks.length; i++) {
             Block block = blocks[i];
-            for (int j = 1; j <= 2; j++) {
-                String lotNumber = "L" + j + "B" + (i + 1);
-                double lotSize = 100.0 + (j * 10);
-                double lotPrice = 1000.0 + (j * 100);
-                Status lotStatus = statusFactory.createStatus((i + j) % 3); // Random status
-
-                Lot lotObject = lotFactory.createLot(lotPrice);
-                lotObject.setLotNumber(lotNumber);
-                lotObject.setBlockNum(block);
-                lotObject.setLotSize(lotSize);
-                lotObject.setLotPrice(lotPrice);
-                lotObject.setLotStatus(lotStatus);
+            for (Lot lot : block.getLots()) {
 
                 Object[] rowData = {
-                        lotNumber,
-                        block,
-                        lotSize,
-                        lotPrice,
-                        lotStatus
+                        lot.getLotNumber(),
+                        lot.getBlockNum(),
+                        lot.getLotSize(),
+                        lot.getLotPrice(),
+                        lot.getLotStatus()
                     };
-                block.assignLot(lotObject);
-                
                 tableModel.addRow(rowData);
             }
         }
